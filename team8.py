@@ -4,6 +4,7 @@
 #     strategy_name: a string
 #     strategy_description: a string
 #     move: A function that returns 'c' or 'b'
+#     version 1/28/2020
 ####
 
 team_name = 'collusion8' # Only 10 chars displayed
