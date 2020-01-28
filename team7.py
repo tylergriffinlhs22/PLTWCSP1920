@@ -17,4 +17,4 @@ def move(my_history, their_history, my_score, their_score):
     elif 'b' in their_history:
         return 'b' # Betray if they were severely punished last time,
     else:
-        return 'c' # otherwise collude.
+        return 'c' # otherwise collude
