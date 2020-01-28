@@ -6,7 +6,7 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'team0' # Only 10 chars displayed
+team_name = 'collusion8' # Only 10 chars displayed
 strategy_name = 'Collude'
 strategy_description = 'Always collude.'
     
