@@ -12,9 +12,9 @@ strategy_description = '''first beta build of the betrayal engine'''
     
 def move(my_history, their_history, my_score, their_score):
     '''doesnt do anything unless the enemy has betrayed'''
-    if len(my_history)==0: # It's the first round; collude.
+    if not(my_history): #its round 1, dont 
         return 'c'
     elif 'b' in their_history:
-        return 'b' # Betray if they were severely punished last time,
+        return 'b' # finish them
     else:
-        return 'c' # otherwise collude
+        return 'c' # they havent betrayed yet
