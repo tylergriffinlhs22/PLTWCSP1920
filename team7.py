@@ -1,30 +1,21 @@
 ####
-# Each team's file must define four tokens:
-#     team_name: a string
-#     strategy_name: a string
-#     strategy_description: a string
-#     move: A function that returns 'c' or 'b'
+# BETRAYAL ENGINE V0
 ####
 
 team_name = 'CHLnGR'# Only 10 chars displayed
-strategy_name = 'Collude but retaliate'
-strategy_description = '''\
-Collude first round. Collude, except in a round after getting 
-a severe punishment.'''
+strategy_name = 'BETRAYAL V1.0.3'
+strategy_description = '''fourth release of the betrayal engine'''
     
 def move(my_history, their_history, my_score, their_score):
-    '''Make my move based on the history with this player.
-    
-    history: a string with one letter (c or b) per round that has been played with this opponent.
-    their_history: a string of the same length as history, possibly empty. 
-    The first round between these two players is my_history[0] and their_history[0]
-    The most recent round is my_history[-1] and their_history[-1]
-    
-    Returns 'c' or 'b' for collude or betray.
-    '''
-    if len(my_history)==0: # It's the first round; collude.
-        return 'c'
-    elif my_history[-1]=='c' and their_history[-1]=='b':
-        return 'b' # Betray if they were severely punished last time,
+    import random
+    '''doesnt do anything unless the enemy has betrayed, nothin works better tbh'''
+    if not(my_history): #its round 1 start fast eat grass
+        return 'b'
+    elif 'b' in their_history:
+        return 'b' # finish them
     else:
-        return 'c' # otherwise collude.
+      if my_score < -150:
+        return random.choice(["c","b","b"]) # if score low has higher chance of betrayal
+      else:
+        return random.choice(["c","c","b"]) # they havent betrayed yet, so randomly betray
+        
