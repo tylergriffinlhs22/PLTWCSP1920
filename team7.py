@@ -3,8 +3,8 @@
 ####
 
 team_name = 'CHLnGR'# Only 10 chars displayed
-strategy_name = 'BETRAYAL V1.0.2'
-strategy_description = '''third release of the betrayal engine'''
+strategy_name = 'BETRAYAL V1.0.3'
+strategy_description = '''fourth release of the betrayal engine'''
     
 def move(my_history, their_history, my_score, their_score):
     import random
@@ -14,5 +14,8 @@ def move(my_history, their_history, my_score, their_score):
     elif 'b' in their_history:
         return 'b' # finish them
     else:
-        return random.choice(["c","c","c","b"]) # they havent betrayed yet, so randomly betray
+      if my_score < -150:
+        return random.choice(["c","b","b"]) # if score low has higher chance of betrayal
+      else:
+        return random.choice(["c","c","b"]) # they havent betrayed yet, so randomly betray
         
