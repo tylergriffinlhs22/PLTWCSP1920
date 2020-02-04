@@ -14,13 +14,13 @@ strategy_description = 'Counts amount of betrays and colludes in the history of 
 def move(my_history, their_history, my_score, their_score):
     b = 0 
     c = 0
-    for letter in their_history:
+    for letter in their_history: #counts amount of betrays and colludes in the opponent's history
       if letter == 'b':
         b += 1
     for letter in their_history:
       if letter == 'c':
        c += 1
-    if b > c:
+    if b > c: #if more betrays than colludes then return a betray, otherwise return collude.
       return 'b'
     else:
       return 'c'
